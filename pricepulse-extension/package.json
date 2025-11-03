@@ -1,0 +1,23 @@
+{
+  "name": "pricepulse-extension",
+  "version": "1.0.0",
+  "description": "A modern, visually stunning price tracker for online shopping",
+  "main": "src/background/service-worker.js",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [
+    "price-tracker",
+    "shopping",
+    "e-commerce",
+    "chrome-extension",
+    "browser-extension"
+  ],
+  "author": "PricePulse Team",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0"
+  }
+}
