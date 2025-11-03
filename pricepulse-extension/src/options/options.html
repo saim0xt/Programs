@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PricePulse Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="settings-container">
+    <header class="settings-header">
+      <div class="header-content">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1 class="logo-text">PricePulse Settings</h1>
+        </div>
+        <button class="btn btn-secondary" id="closeBtn">Close</button>
+      </div>
+    </header>
+
+    <div class="settings-content">
+      <div class="settings-sidebar">
+        <nav class="settings-nav">
+          <a href="#general" class="nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="3" stroke-width="2"/>
+              <path d="M12 1v6m0 6v6M23 12h-6m-6 0H1" stroke-width="2"/>
+            </svg>
+            General
+          </a>
+          <a href="#notifications" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke-width="2"/>
+            </svg>
+            Notifications
+          </a>
+          <a href="#tracking" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 11l3 3L22 4" stroke-width="2" stroke-linecap="round"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-width="2"/>
+            </svg>
+            Tracking
+          </a>
+          <a href="#appearance" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="5" stroke-width="2"/>
+              <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-width="2"/>
+            </svg>
+            Appearance
+          </a>
+          <a href="#account" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke-width="2"/>
+            </svg>
+            Account
+          </a>
+          <a href="#about" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path d="M12 16v-4m0-4h.01" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            About
+          </a>
+        </nav>
+      </div>
+
+      <div class="settings-main">
+        <!-- General Section -->
+        <section class="settings-section active" id="general">
+          <h2 class="section-title">General Settings</h2>
+
+          <div class="setting-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="currency">Currency</label>
+                <p class="setting-description">Select your preferred currency</p>
+              </div>
+              <select id="currency" class="setting-select">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="CAD">CAD ($)</option>
+                <option value="AUD">AUD ($)</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="autoTrack">Auto-track products</label>
+                <p class="setting-description">Automatically track products when visiting product pages</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="autoTrack">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notifications Section -->
+        <section class="settings-section" id="notifications">
+          <h2 class="section-title">Notification Settings</h2>
+
+          <div class="setting-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="enableNotifications">Enable notifications</label>
+                <p class="setting-description">Receive price drop alerts</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="enableNotifications" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="priceDropThreshold">Price drop threshold</label>
+                <p class="setting-description">Minimum percentage drop to trigger notification</p>
+              </div>
+              <div class="input-with-unit">
+                <input type="number" id="priceDropThreshold" class="setting-input" value="5" min="1" max="50">
+                <span class="input-unit">%</span>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="targetPriceNotif">Target price alerts</label>
+                <p class="setting-description">Get notified when a product reaches your target price</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="targetPriceNotif" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="soundNotif">Sound notifications</label>
+                <p class="setting-description">Play a sound when receiving notifications</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="soundNotif">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tracking Section -->
+        <section class="settings-section" id="tracking">
+          <h2 class="section-title">Tracking Settings</h2>
+
+          <div class="setting-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="checkInterval">Price check interval</label>
+                <p class="setting-description">How often to check for price changes</p>
+              </div>
+              <select id="checkInterval" class="setting-select">
+                <option value="1">Every hour</option>
+                <option value="3">Every 3 hours</option>
+                <option value="6" selected>Every 6 hours</option>
+                <option value="12">Every 12 hours</option>
+                <option value="24">Once a day</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="historyDuration">Price history duration</label>
+                <p class="setting-description">How long to keep price history</p>
+              </div>
+              <select id="historyDuration" class="setting-select">
+                <option value="7">1 week</option>
+                <option value="30" selected>1 month</option>
+                <option value="90">3 months</option>
+                <option value="180">6 months</option>
+                <option value="365">1 year</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label>Clear tracking data</label>
+                <p class="setting-description">Remove all tracked products and history</p>
+              </div>
+              <button class="btn btn-danger" id="clearDataBtn">Clear All Data</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Appearance Section -->
+        <section class="settings-section" id="appearance">
+          <h2 class="section-title">Appearance</h2>
+
+          <div class="setting-group">
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="theme">Theme</label>
+                <p class="setting-description">Choose your preferred theme</p>
+              </div>
+              <select id="theme" class="setting-select">
+                <option value="light" selected>Light</option>
+                <option value="dark">Dark</option>
+                <option value="auto">Auto (System)</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="compactMode">Compact mode</label>
+                <p class="setting-description">Show more content in less space</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="compactMode">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="showBadge">Show badge</label>
+                <p class="setting-description">Display number of tracked items on extension icon</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="showBadge" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Account Section -->
+        <section class="settings-section" id="account">
+          <h2 class="section-title">Account</h2>
+
+          <div class="setting-group">
+            <div class="account-card">
+              <div class="account-icon">👤</div>
+              <div class="account-info">
+                <h3>Not signed in</h3>
+                <p>Sign in to sync your tracked items across devices</p>
+                <button class="btn btn-primary" id="signInBtn">Sign In</button>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-label">
+                <label for="syncEnabled">Enable sync</label>
+                <p class="setting-description">Sync your data across devices (requires sign in)</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="syncEnabled" disabled>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="settings-section" id="about">
+          <h2 class="section-title">About PricePulse</h2>
+
+          <div class="setting-group">
+            <div class="about-card">
+              <div class="about-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>PricePulse</h3>
+              <p class="version">Version 1.0.0</p>
+              <p class="description">A modern, intelligent price tracker for online shopping. Track prices, get alerts, and never miss a deal.</p>
+
+              <div class="about-links">
+                <a href="#" class="about-link">Privacy Policy</a>
+                <a href="#" class="about-link">Terms of Service</a>
+                <a href="#" class="about-link">Support</a>
+                <a href="#" class="about-link">Rate Extension</a>
+              </div>
+
+              <p class="copyright">© 2024 PricePulse. All rights reserved.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Save notification -->
+    <div class="save-notification" id="saveNotification">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Settings saved successfully!
+    </div>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

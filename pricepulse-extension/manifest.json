@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "PricePulse - Smart Price Tracker",
+  "version": "1.0.0",
+  "description": "Track prices, get alerts, and never miss a deal on your favorite products",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "PricePulse"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.fr/*",
+        "*://*.ebay.com/*",
+        "*://*.walmart.com/*",
+        "*://*.bestbuy.com/*",
+        "*://*.target.com/*",
+        "*://*.aliexpress.com/*",
+        "*://*.etsy.com/*",
+        "*://*.shopify.com/*"
+      ],
+      "js": ["src/content/content-script.js"],
+      "css": ["src/content/content-styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.amazon.com/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.ca/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.fr/*",
+    "*://*.ebay.com/*",
+    "*://*.walmart.com/*",
+    "*://*.bestbuy.com/*",
+    "*://*.target.com/*",
+    "*://*.aliexpress.com/*",
+    "*://*.etsy.com/*",
+    "*://*.shopify.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*", "src/content/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "src/options/options.html",
+  "chrome_url_overrides": {},
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

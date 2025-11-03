@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to PricePulse</title>
+  <link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+  <div class="onboarding-container">
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Slides Container -->
+    <div class="slides-container">
+      <!-- Slide 1: Welcome -->
+      <div class="slide active" data-slide="1">
+        <div class="slide-content">
+          <div class="logo-animation">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1 class="slide-title">Welcome to PricePulse</h1>
+          <p class="slide-description">Your smart companion for tracking prices and finding the best deals online</p>
+          <div class="features-preview">
+            <div class="feature-tag">📊 Track Prices</div>
+            <div class="feature-tag">🔔 Get Alerts</div>
+            <div class="feature-tag">💰 Save Money</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: How It Works -->
+      <div class="slide" data-slide="2">
+        <div class="slide-content">
+          <div class="illustration">
+            <div class="step-circle">1</div>
+          </div>
+          <h2 class="slide-title">How It Works</h2>
+          <p class="slide-description">Visit any product page on supported e-commerce sites</p>
+          <div class="supported-sites">
+            <div class="site-badge">Amazon</div>
+            <div class="site-badge">eBay</div>
+            <div class="site-badge">Walmart</div>
+            <div class="site-badge">Best Buy</div>
+            <div class="site-badge">Target</div>
+            <div class="site-badge">+ More</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Track Products -->
+      <div class="slide" data-slide="3">
+        <div class="slide-content">
+          <div class="illustration">
+            <div class="step-circle">2</div>
+          </div>
+          <h2 class="slide-title">Track Products</h2>
+          <p class="slide-description">Click the floating "Track Price" button that appears on product pages, or use the extension popup</p>
+          <div class="demo-card">
+            <div class="demo-button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14m7-7H5" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Track Price
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Get Alerts -->
+      <div class="slide" data-slide="4">
+        <div class="slide-content">
+          <div class="illustration">
+            <div class="step-circle">3</div>
+          </div>
+          <h2 class="slide-title">Get Price Alerts</h2>
+          <p class="slide-description">Receive notifications when prices drop or reach your target price</p>
+          <div class="notification-demo">
+            <div class="notification-card">
+              <div class="notification-icon">🎉</div>
+              <div class="notification-content">
+                <div class="notification-title">Price Drop Alert!</div>
+                <div class="notification-text">Your item is now 25% cheaper</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Dashboard -->
+      <div class="slide" data-slide="5">
+        <div class="slide-content">
+          <div class="illustration">
+            <div class="step-circle">4</div>
+          </div>
+          <h2 class="slide-title">Manage Everything</h2>
+          <p class="slide-description">View price history, manage your wishlist, and discover the best deals in your personalized dashboard</p>
+          <div class="dashboard-preview">
+            <div class="preview-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 3h7v7H3zm11 0h7v7h-7zm0 11h7v7h-7zM3 14h7v7H3z" stroke-width="2"/>
+              </svg>
+              <span>Dashboard</span>
+            </div>
+            <div class="preview-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span>Analytics</span>
+            </div>
+            <div class="preview-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-width="2"/>
+              </svg>
+              <span>Wishlist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Permissions -->
+      <div class="slide" data-slide="6">
+        <div class="slide-content">
+          <div class="illustration">
+            <div class="lock-icon">🔒</div>
+          </div>
+          <h2 class="slide-title">Privacy & Permissions</h2>
+          <p class="slide-description">PricePulse requires certain permissions to function properly</p>
+          <div class="permissions-list">
+            <div class="permission-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <div class="permission-name">Storage</div>
+                <div class="permission-desc">Save your tracked products locally</div>
+              </div>
+            </div>
+            <div class="permission-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <div class="permission-name">Notifications</div>
+                <div class="permission-desc">Alert you about price drops</div>
+              </div>
+            </div>
+            <div class="permission-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <div class="permission-name">Active Tab</div>
+                <div class="permission-desc">Detect products on e-commerce sites</div>
+              </div>
+            </div>
+          </div>
+          <p class="privacy-note">Your data stays on your device. We never collect or share your information.</p>
+        </div>
+      </div>
+
+      <!-- Slide 7: Get Started -->
+      <div class="slide" data-slide="7">
+        <div class="slide-content">
+          <div class="success-icon">✨</div>
+          <h2 class="slide-title">You're All Set!</h2>
+          <p class="slide-description">Start tracking prices and saving money on your favorite products</p>
+          <div class="quick-tips">
+            <h3>Quick Tips</h3>
+            <ul>
+              <li>Set target prices to get notified when items reach your budget</li>
+              <li>Check your dashboard regularly for the best deals</li>
+              <li>Customize notification settings in the options page</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button class="btn btn-secondary" id="skipBtn">Skip</button>
+      <div class="dots" id="dots"></div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="backBtn" style="display: none;">Back</button>
+        <button class="btn btn-primary" id="nextBtn">Next</button>
+        <button class="btn btn-primary" id="finishBtn" style="display: none;">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="onboarding.js"></script>
+</body>
+</html>
